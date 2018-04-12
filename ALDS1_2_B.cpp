@@ -14,16 +14,21 @@ void printArray(int* A, int N){
 
 void selectionSort(int* A, int n){
   int min_j;
-  for (int i = 0; i < n; i++) {
+  int cnt=0;
+  for (int i = 0; i < n; i++) { // A[i] 以降で最小のものを探し, A[i]とswap
     min_j = i;
     for (int j = i; j < n; j++) {
       if (A[j] < A[min_j]) {
         min_j = j;
       }
     }
-    std::swap(A[min_j], A[j]);
+    if(i!=min_j){
+      std::swap(A[min_j], A[i]);
+      cnt++;
+    }
   }
   printArray(A,n);
+  std::cout << cnt << '\n';
 }
 
 
@@ -34,5 +39,6 @@ int main() {
   for (int i = 0; i < n; i++) {
     std::cin >> A[i];
   }
+  selectionSort(A, n);
   return 0;
 }

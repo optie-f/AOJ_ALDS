@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #define INT_MAX 2147483647
-
+//よりスッキリ
 int main(void){
   int n;
   int val;
