@@ -36,7 +36,6 @@ void shellSort(int* A, int n){
       std::cout << '\n';
     }
   }
-
   for (int i = m-1; i >=0; i--) {
     A = insertionSort(A,n,G[i]);
   }
