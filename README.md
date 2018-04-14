@@ -8,6 +8,7 @@ http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=ALDS1
 
 * `ALDS1_X_X.cpp` : 普通に解いたもの+微修正
 * `ALDS1_X_X_rev.cpp` : 解答例といくらか異なる場合などに、解答例を参考に書き直し
+* `ALDS1_X_X_STL.cpp` : stack, queueなどの実装の問題で、STLを用いたもの
 
 コミットメッセージはあんまり対応していません。
 
