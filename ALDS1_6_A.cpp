@@ -12,7 +12,17 @@
 typedef long long ll;
 using namespace std;
 
-void CountingSort(std::vector<int> &A, std::vector<int> &B, k) {
+void printVector(std::vector<int> &A) {
+  for (size_t i = 0; i < A.size(); i++) {
+    std::cout << A[i];
+    if (i<A.size()-1) {
+      std::cout << " ";
+    }
+  }
+  std::cout << " " << '\n';
+}
+
+void CountingSort(std::vector<int> &A, std::vector<int> &B, int k) {
   std::vector<int> C(k+1, 0);
   int n = A.size();
 
@@ -24,8 +34,8 @@ void CountingSort(std::vector<int> &A, std::vector<int> &B, k) {
     C[i] += C[i-1];
   }
 
-  for (size_t i = n; i > 0; i--) {
-    B[C[A[i]]] = A[i];
+  for (int i = n-1; i >= 0; i--) {
+    B[C[A[i]]-1] = A[i];
     C[A[i]]--;
   }
 }
@@ -54,6 +64,7 @@ int main(int argc, char const *argv[]) {
     std::cout << B[i];
     if (i<n-1) {
       std::cout << " ";
+    }
   }
   std::cout << '\n';
 
