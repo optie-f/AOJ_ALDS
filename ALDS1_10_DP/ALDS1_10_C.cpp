@@ -38,25 +38,19 @@ int CalcLCS(string X, string Y){
   int c[1001][1001];
   int m = SZ(X);
   int n = SZ(Y);
-  int mlen=0;
-  X = ' ' + X;
-  Y = ' ' + Y;
-
   REP1(i,m) c[i][0]=0;
-
   REP1(j,n) c[0][j]=0;
-  
-  REP1(i,m){
-    REP1(j,n){
+
+  REP0(i,m){
+    REP0(j,n){
       if (X[i]==Y[j]) {
-        c[i][j] = c[i-1][j-1] + 1;
+        c[i+1][j+1] = c[i][j] + 1;
       } else {
-        c[i][j] = max(c[i-1][j], c[i][j-1]);
+        c[i+1][j+1] = max(c[i][j+1], c[i+1][j]);
       }
-      mlen=max(mlen, c[i][j]);
     }
   }
-  return mlen;
+  return c[m][n];
 }
 
 
